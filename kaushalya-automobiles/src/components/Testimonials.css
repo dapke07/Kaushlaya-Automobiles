@@ -1,0 +1,85 @@
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.t-card {
+  margin: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-m);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.t-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-border-light);
+}
+
+.t-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.t-card__quote {
+  color: var(--color-red);
+  opacity: 0.5;
+}
+
+.t-card__stars {
+  display: flex;
+  gap: 2px;
+  color: #f2a30f;
+}
+
+.t-card p {
+  margin-top: 16px;
+  font-size: 14.5px;
+  color: var(--color-black);
+  font-style: italic;
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.t-card__author {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.t-card__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.t-card__author cite {
+  font-style: normal;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+@media (max-width: 900px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}

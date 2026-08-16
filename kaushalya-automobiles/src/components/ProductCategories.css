@@ -1,0 +1,124 @@
+.products__featured {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 auto 28px;
+  max-width: 1000px;
+}
+
+.product-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 62px;
+  padding: 12px 14px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: 999px;
+  box-shadow: var(--shadow-card);
+  color: var(--color-black);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.product-feature__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(211, 32, 42, 0.08);
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.product-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-m);
+  padding: 28px 26px;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-color: var(--color-red);
+}
+
+.product-card__icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-s);
+  background: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background 0.25s ease;
+}
+
+.product-card:hover .product-card__icon {
+  background: var(--color-red);
+}
+
+.product-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.product-card p {
+  margin-top: 10px;
+  font-size: 14.5px;
+  color: var(--color-steel);
+  min-height: 66px;
+}
+
+.product-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-red);
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.product-card__link:hover {
+  border-color: var(--color-red);
+}
+
+@media (max-width: 900px) {
+  .products__featured {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .products__featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .products__grid {
+    grid-template-columns: 1fr;
+  }
+  .product-card p {
+    min-height: 0;
+  }
+}
